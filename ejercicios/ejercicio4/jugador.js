@@ -10,6 +10,9 @@ class Jugador {
   
     agregarCarta(carta) {
       this.mano.agregarCarta(carta);
+      if (this.mano.getValor() > 21) {
+        this.plantado = true;
+      }
     }
     plantarse() {
       this.plantado = true;

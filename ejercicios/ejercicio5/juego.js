@@ -17,10 +17,6 @@ class Juego {
       this.crupier.agregarCarta(this.baraja.sacarCarta());
     }
   
-    juegoTerminado() {
-      return this.jugador.mano.getValor() > 21 || this.crupier.mano.getValor() > 21
-        || this.jugador.mano.cartas.length === 5 || this.crupier.mano.cartas.length === 5;
-    }
     mostrarManos(oculto=false) {
         console.log(`El jugador tiene: ${this.jugador.mostrarMano()} (total: ${this.jugador.mano.getValor()})`);
         console.log(`El crupier tiene: ${this.crupier.mostrarMano(oculto)} (total: ${this.crupier.mano.getValor()})`);
@@ -54,9 +50,8 @@ class Juego {
             }
         }
   
-        console.log(`El jugador tiene: ${this.jugador.mostrarMano()} (total: ${this.jugador.mano.getValor()})`);
-        console.log(`El crupier tiene: ${this.crupier.mostrarMano()} (total: ${this.crupier.mano.getValor()})`);
-    
+        this.mostrarManos();
+        
         if (this.jugador.mano.getValor() > 21) {
             console.log("Has perdido");
         } else if (this.crupier.mano.getValor() > 21) {
