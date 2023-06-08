@@ -19,7 +19,7 @@ class Juego {
   
     mostrarManos(oculto=false) {
         console.log(`El jugador tiene: ${this.jugador.mostrarMano()} (total: ${this.jugador.mano.getValor()})`);
-        console.log(`El crupier tiene: ${this.crupier.mostrarMano(oculto)} (total: ${this.crupier.mano.getValor()})`);
+        console.log(`El crupier tiene: ${this.crupier.mostrarMano(oculto)} (total: ${ !oculto ? this.crupier.mano.getValor() : "?"})`);
     }
   
     jugar = async () =>{
@@ -51,7 +51,7 @@ class Juego {
         }
   
         this.mostrarManos();
-        
+
         if (this.jugador.mano.getValor() > 21) {
             console.log("Has perdido");
         } else if (this.crupier.mano.getValor() > 21) {
