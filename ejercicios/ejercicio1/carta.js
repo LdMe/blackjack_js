@@ -1,5 +1,5 @@
-import { fileURLToPath } from "url";
-
+/* import { fileURLToPath } from "url";
+ */
 class Carta {
     constructor(palo, valor) {
       this.palo = palo;
@@ -20,7 +20,7 @@ class Carta {
 export default Carta;
 
 
-
+/* 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
     let carta = new Carta("corazones", "A");
     console.log(carta.getValor());
@@ -28,4 +28,4 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     console.log(carta.getValor());
     carta = new Carta("corazones", "2");
     console.log(carta.getValor());
-}
+} */

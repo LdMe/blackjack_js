@@ -1,6 +1,6 @@
-import { fileURLToPath } from "url";
+/* import { fileURLToPath } from "url";
 import Baraja from "../ejercicio2/baraja.js";
-
+ */
 class Mano {
     constructor() {
       this.cartas = [];
@@ -31,7 +31,7 @@ class Mano {
 
   export default Mano;
 
-    if (process.argv[1] === fileURLToPath(import.meta.url)) {
+   /*  if (process.argv[1] === fileURLToPath(import.meta.url)) {
         let baraja = new Baraja();
         let mano = new Mano();
         baraja.mezclar();
@@ -40,5 +40,5 @@ class Mano {
             mano.agregarCarta(carta);
         }
         console.log(mano.cartas);
-    }
+    } */
   

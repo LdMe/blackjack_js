@@ -1,6 +1,6 @@
-import { fileURLToPath } from "url";
+// import { fileURLToPath } from "url";
 import Mano from "../ejercicio3/mano.js"
-import Baraja from "../ejercicio2/baraja.js";
+// import Baraja from "../ejercicio2/baraja.js";
 
 class Jugador {
     constructor() {
@@ -34,7 +34,7 @@ class Jugador {
 
     export default Jugador;
 
-    if (process.argv[1] === fileURLToPath(import.meta.url)) {
+    /* if (process.argv[1] === fileURLToPath(import.meta.url)) {
         let baraja = new Baraja();
         let jugador = new Jugador();
         baraja.mezclar();
@@ -50,4 +50,4 @@ class Jugador {
             crupier.agregarCarta(carta);
         }
         console.log(crupier.mostrarMano(true));
-    }
+    } */
