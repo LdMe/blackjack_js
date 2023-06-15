@@ -32,7 +32,7 @@ class Carta  extends BaseCarta{
         valor.innerHTML = this.valor;
         let palo = document.createElement("img");
         palo.classList.add("palo");
-        palo.src = `public/img/${this.palo}.png`;
+        palo.src = `public/img/${this.palo.toLowerCase()}.png`;
         titulo.appendChild(valor);
         titulo.appendChild(palo);
         if(reversed){
