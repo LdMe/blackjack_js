@@ -120,29 +120,50 @@ class Juego {
         
     }
 
-    jugadorGana() {
-        return this.jugador.mano.getValor() <= 21 && (this.crupier.mano.getValor() > 21 || this.jugador.mano.getValor() > this.crupier.mano.getValor());
+    jugadorGana(jugador1,jugador2) {
+        /*
+        * TODO:
+        * Devuelve el jugador que gana la partida, si es un empate devuelve null
+        * Para que un jugador gane, debe tener más puntos que el otro y no haberse pasado de 21, o no haberse pasado de 21 y que el otro sí se haya pasado
+        * Si los dos se han pasado de 21, devuelve null
+        */
+        const valorJugador1 = jugador1.mano.getValor();
+        const valorJugador2 = jugador2.mano.getValor();
+        if (valorJugador1 > 21 && valorJugador2 > 21) {
+            return null;
+        }
+        if (valorJugador1 > 21) {
+            return jugador2;
+        }
+        if (valorJugador2 > 21) {
+            return jugador1;
+        }
+        if (valorJugador1 > valorJugador2) {
+            return jugador1;
+        }
+        if (valorJugador2 > valorJugador1) {
+            return jugador2;
+        }
     }
 
-    crupierGana() {
-        return this.jugador.mano.getValor() > 21 || (this.crupier.mano.getValor() <= 21 && (this.jugador.mano.getValor() > 21 || this.crupier.mano.getValor() > this.jugador.mano.getValor()));
-    }
+       
 
     mostrarGanador(borrar=false) {
         
-        let ganador = document.getElementById("ganador");
+        let ganadorDOM = document.getElementById("ganador");
+        let ganador = this.jugadorGana(this.jugador,this.crupier);
         if(borrar){
-            ganador.innerText = "";
+            ganadorDOM.innerText = "";
             return;
         }
-        if (this.jugadorGana()) {
-            ganador.innerText = "Has ganado!";
+        if (ganador === this.jugador) {
+            ganadorDOM.innerText = "Has ganado!";
         }
-        else if (this.crupierGana()) {
-            ganador.innerText = "Gana la casa";
+        else if (   ganador === this.crupier) {
+            ganadorDOM.innerText = "Gana la casa";
         }
         else {
-            ganador.innerText = "Empate";
+            ganadorDOM.innerText = "Empate";
         }
     }
 
