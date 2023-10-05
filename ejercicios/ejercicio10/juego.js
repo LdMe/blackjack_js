@@ -121,12 +121,6 @@ class Juego {
     }
 
     jugadorGana(jugador1,jugador2) {
-        /*
-        * TODO:
-        * Devuelve el jugador que gana la partida, si es un empate devuelve null
-        * Para que un jugador gane, debe tener más puntos que el otro y no haberse pasado de 21, o no haberse pasado de 21 y que el otro sí se haya pasado
-        * Si los dos se han pasado de 21, devuelve null
-        */
         const valorJugador1 = jugador1.mano.getValor();
         const valorJugador2 = jugador2.mano.getValor();
         if (valorJugador1 > 21 && valorJugador2 > 21) {
